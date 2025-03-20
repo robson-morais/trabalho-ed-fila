@@ -20,7 +20,7 @@ public class Queue<Item> implements Iterable<Item> {
         n = 0;
     }
 
-    /*
+    /**
      * Returns true if this queue is empty
      * 
      * @return {@code true} if this queue is empty; {@code false} otherwise
@@ -29,7 +29,7 @@ public class Queue<Item> implements Iterable<Item> {
         return first == null;
     }
 
-    /*
+    /**
      * Returns the number of items iin this queue
      * 
      * @return the number of items in this queue
@@ -38,7 +38,7 @@ public class Queue<Item> implements Iterable<Item> {
         return n;
     }
 
-    /*
+    /**
      * Returns the item least recently added to this queue
      * 
      * @return the item least recently added to this queue
@@ -50,7 +50,7 @@ public class Queue<Item> implements Iterable<Item> {
         return first.item;
     }
 
-    /*
+    /**
      * Adds the item to this queue.
      * 
      * @param item the item to add
@@ -61,13 +61,13 @@ public class Queue<Item> implements Iterable<Item> {
         last.item = item;
         last.next = null;
         if (isEmpty()) 
-        first = last;
+           first = last;
         else 
-        oldlast.next = last;
+           oldlast.next = last;
         n++;
     }
 
-    /*
+    /**
      * Removes and returns the item on this queue that was least recently added.
      * 
      * @return the item on this queue that was least recently addded
@@ -76,14 +76,14 @@ public class Queue<Item> implements Iterable<Item> {
     public Item dequeue() {
         if (isEmpty()) 
             throw new NoSuchElementException("Queue underflow");
-            Item item = first.item;
-            n--;
-            if (isEmpty())
-                last = null; // to avoid loitering
+        Item item = first.item;
+        n--;
+        if (isEmpty())
+            last = null; // to avoid loitering
         return item;
     }
 
-    /*
+    /**
      * Returns a string representation of this queue.
      * 
      * @return the sequence of items in FIFIO order, separated by spaces
@@ -96,7 +96,7 @@ public class Queue<Item> implements Iterable<Item> {
         } return s.toString();
     }
 
-    /*
+    /**
      * Returns an iterator that iterates over the items in this queue in FIFO order.
      * 
      * @returns an iterator that iterates over the items in this queue in FIFO order
@@ -126,7 +126,7 @@ public class Queue<Item> implements Iterable<Item> {
         
     }
 
-    /*
+    /**
      * Unit tests the {@code Queue} data type.
      * 
      * @param args the command-line arguments
